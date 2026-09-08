@@ -20,13 +20,14 @@ h1{font-size:clamp(42px,6vw,72px);line-height:1.02;margin:14px 0 20px;letter-spa
 .hero-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);padding:30px;border-radius:18px;backdrop-filter:blur(5px)}
 .hero-card .stone{font-size:74px;margin-bottom:5px}.hero-card h3{margin:0 0 8px}.hero-card p{font-size:14px;margin:0;color:#cbd5db}
 section{padding:78px 0}.section-head{max-width:720px;margin-bottom:38px}.section-head h2{font-size:38px;line-height:1.1;margin:8px 0 12px}.section-head p{color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:white;border:1px solid var(--line);padding:26px;border-radius:14px}.icon{font-size:30px}.card h3{margin:10px 0 7px}.card p{color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:white;border:1px solid var(--line);padding:26px;border-radius:14px}.icon{font-size:30px}.card h3{margin:10px 0 7px}.card p{margin:0;color:var(--muted);font-size:15px}
 .dark{background:var(--navy);color:white}.dark .section-head p,.dark .card p{color:#bac7cf}.dark .card{background:#102332;border-color:#29404f}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.step{padding:22px;border-top:3px solid var(--gold);background:white;border-radius:0 0 12px 12px}.step b{font-size:28px;color:var(--gold)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.step{padding:22px;border-top:3px solid var(--gold);background:white;border-radius:0 0 12px 12px}.step b{font-size:28px;color:var(--gold)}.step h3{margin:10px 0 8px;font-size:18px}.step p{margin:0;font-size:14px;color:var(--muted)}
 .about{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}.check{margin:14px 0;padding-left:28px;position:relative}.check:before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:bold}
 .cta{background:linear-gradient(135deg,#c99a3b,#e1bd6f);color:#101820;text-align:center;padding:65px 20px}.cta h2{font-size:40px;margin:0 0 10px}.cta p{max-width:650px;margin:0 auto 20px}
-footer{background:#030a10;color:#9daab3;padding:35px 0;font-size:13px}.footer-grid{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.wa{position:fixed;right:20px;bottom:20px;background:#20b95a;color:white;text-decoration:none;padding:14px 18px;border-radius:999px;font-weight:800;box-shadow:0 8px 25px rgba(0,0,0,.25);z-index:30}
-@media(max-width:800px){nav{display:none}.hero-grid,.about{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}section{padding:58px 0}.hero{padding:75px 0}.hero-card{display:none}}
+.showcase{text-align:center;margin:30px 0}.showcase img{width:100%;max-width:550px;border-radius:16px;display:block;margin:auto}.showcase p{margin-top:10px;font-weight:600;color:var(--navy)}
+footer{background:#030a10;color:#9daab3;padding:35px 0;font-size:13px}.footer-grid{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.wa{position:fixed;right:20px;bottom:20px;background:var(--gold);color:#111;width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:24px;box-shadow:0 4px 12px rgba(0,0,0,.2);z-index:10}
+@media(max-width:800px){nav{display:none}.hero-grid,.about{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}section{padding:58px 0}.hero{padding:75px 0}.hero p{font-size:16px}h1{font-size:48px}}
 @media(max-width:500px){.steps{grid-template-columns:1fr}h1{font-size:45px}}
 </style>
 </head>
@@ -58,7 +59,7 @@ footer{background:#030a10;color:#9daab3;padding:35px 0;font-size:13px}.footer-gr
 
 <section id="services">
 <div class="container">
-<div class="section-head"><div class="eyebrow">Our services</div><h2>Testing that helps you make better decisions.</h2><p>From a single stone to a larger collection, start with the examination your specimen actually needs.</p></div>
+<div class="section-head"><div class="eyebrow">Our services</div><h2>Testing that helps you make better decisions.</h2><p>From a single stone to a larger collection, start with the examination your specimen needs.</p></div>
 <div class="grid">
 <div class="card"><div class="icon">💎</div><h3>Gemstone Identification</h3><p>Identify the likely gemstone species and distinguish common look-alikes.</p></div>
 <div class="card"><div class="icon">🔬</div><h3>Gemstone Examination</h3><p>Examine gemstones for characteristics relevant to identification and authenticity assessment.</p></div>
@@ -66,6 +67,15 @@ footer{background:#030a10;color:#9daab3;padding:35px 0;font-size:13px}.footer-gr
 <div class="card"><div class="icon">🥇</div><h3>Gold Testing</h3><p>Testing support for gold and gold-bearing material.</p></div>
 <div class="card"><div class="icon">📄</div><h3>Laboratory Reports</h3><p>Clear written documentation of the examination and reported findings.</p></div>
 <div class="card"><div class="icon">🛒</div><h3>Pre-Purchase Testing</h3><p>Get independent information before buying or selling a valuable stone.</p></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="showcase">
+<img src="Emerald-Somalia.jpg" alt="Emerald gemstone from Somalia">
+<p>Somali Emerald Gemstone</p>
 </div>
 </div>
 </section>

@@ -16,8 +16,9 @@ body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--navy);backgroun
 .hero-banner img{width:100%;height:auto;display:block}
 header{background:rgba(7,20,31,.96);color:white;position:sticky;top:0;z-index:20;border-bottom:1px solid rgba(255,255,255,.1)}
 .nav{height:72px;display:flex;align-items:center;justify-content:space-between}
-.brand{font-weight:800;letter-spacing:.4px}
-.brand span{color:var(--gold)}
+.brand{font-weight:800;letter-spacing:.4px;display:flex;align-items:center;gap:12px}
+.brand img{height:50px;width:auto}
+.brand-text span{color:var(--gold)}
 nav a{color:white;text-decoration:none;margin-left:22px;font-size:14px}
 .hero{background:radial-gradient(circle at 80% 20%,#294357 0,#07141f 48%,#030a10 100%);color:white;padding:105px 0 90px}
 .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:50px;align-items:center}
@@ -57,18 +58,21 @@ section{padding:78px 0}
 footer{background:#030a10;color:#9daab3;padding:35px 0;font-size:13px}
 .footer-grid{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .wa{position:fixed;right:20px;bottom:20px;background:#25D366;color:white;padding:12px 14px;border-radius:28px;text-decoration:none;font-size:16px}
-@media(max-width:800px){nav{display:none}.hero-grid,.about{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}section{padding:58px 0}.hero{padding:75px 0}.brand{font-size:16px}}
-@media(max-width:500px){.steps{grid-template-columns:1fr}h1{font-size:45px}}
+@media(max-width:800px){nav{display:none}.hero-grid,.about{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}section{padding:58px 0}.hero{padding:75px 0}.brand{flex-direction:column;gap:8px}.brand img{height:40px}.brand-text{font-size:13px}}
+@media(max-width:500px){.steps{grid-template-columns:1fr}h1{font-size:45px}.brand img{height:35px}}
 </style>
 </head>
 <body>
 <div class="hero-banner">
-<img src="gemstone-testing-hero.jpg" alt="Somalia Gemstones and Minerals Co. - Professional gemstone testing with certified gemologist examining high-quality gemstones including emeralds, rubies and sapphires" />
+<img src="gemstone-testing-hero.jpg" alt="Somalia Gemstones and Minerals Co. - Professional gemstone testing with certified gemologist examining high-quality gemstones including emeralds, rubies and sapphires">
 </div>
 
 <header>
 <div class="container nav">
-<div class="brand">SOMALIA <span>GEMSTONE TESTING</span></div>
+<div class="brand">
+<img src="logo.png" alt="Somalia Gemstones and Minerals Co. Logo">
+<div class="brand-text">SOMALIA <span>GEMSTONE TESTING</span></div>
+</div>
 <nav aria-label="Main navigation"><a href="#services">Services</a><a href="#process">Process</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
 </div>
 </header>
@@ -93,7 +97,7 @@ footer{background:#030a10;color:#9daab3;padding:35px 0;font-size:13px}
 
 <section id="services">
 <div class="container">
-<div class="section-head"><div class="eyebrow">Our services</div><h2>Testing that helps you make better decisions.</h2><p>From a single stone to a larger collection, start with the examination you need and we'll guide you through the options.</p></div>
+<div class="section-head"><div class="eyebrow">Our services</div><h2>Testing that helps you make better decisions.</h2><p>From a single stone to a larger collection, start with the examination you need.</p></div>
 <div class="grid">
 <div class="card"><div class="icon">💎</div><h3>Gemstone Identification</h3><p>Identify the likely gemstone species and distinguish common look-alikes.</p></div>
 <div class="card"><div class="icon">🔬</div><h3>Gemstone Examination</h3><p>Examine gemstones for characteristics relevant to identification and authenticity assessment.</p></div>
@@ -132,7 +136,7 @@ footer{background:#030a10;color:#9daab3;padding:35px 0;font-size:13px}
 <h3>What should you send us?</h3>
 <p>For an initial WhatsApp assessment, send:</p>
 <p>• Clear photos from several angles<br>• Approximate size/weight if known<br>• Where the specimen came from<br>• What you believe the stone may be<br>• What you want to know about it</p>
-<a class="btn primary" href="https://wa.me/252622853776?text=Hello%20Somalia%20Gemstone%20Testing%2C%20I%20would%20like%20to%20have%20a%20stone%20tested." target="_blank" rel="noopener">Send a Stone on WhatsApp</a>
+<a class="btn primary" href="https://wa.me/252622853776?text=Hello%20Somalia%20Gemstone%20Testing%2C%20I%20would%20like%20to%20have%20a%20stone%20tested." target="_blank" rel="noopener">Send a Stone to Test</a>
 </div>
 </div>
 </section>

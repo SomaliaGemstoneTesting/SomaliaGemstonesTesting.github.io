@@ -12,8 +12,9 @@
 html{scroll-behavior:smooth}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--navy);background:var(--cream);line-height:1.6}
 .container{max-width:1120px;margin:auto;padding:0 22px}
-.hero-banner{width:100%;display:block}
-.hero-banner img{width:100%;height:auto;display:block}
+/* hero banner: show logo centered */
+.hero-banner{width:100%;display:flex;align-items:center;justify-content:center;padding:18px 0;background:linear-gradient(180deg,rgba(7,20,31,0.02),transparent)}
+.hero-banner img{max-width:320px;height:auto;display:block}
 header{background:rgba(7,20,31,.96);color:white;position:sticky;top:0;z-index:20;border-bottom:1px solid rgba(255,255,255,.1)}
 .nav{height:72px;display:flex;align-items:center;justify-content:space-between}
 .brand{font-weight:800;letter-spacing:.4px;display:flex;align-items:center;gap:12px}
@@ -64,6 +65,7 @@ footer{background:#030a10;color:#9daab3;padding:35px 0;font-size:13px}
 </head>
 <body>
 <div class="hero-banner">
+  <img src="logo.png" alt="Somalia Gemstones and Minerals Co. Logo" class="hero-logo">
 </div>
 
 <header>

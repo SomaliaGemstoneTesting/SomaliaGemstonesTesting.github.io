@@ -7,49 +7,131 @@
 <meta name="description" content="Somalia Gemstone Testing Laboratory provides gemstone identification, examination, mineral testing, gold testing and laboratory reports in Somalia.">
 <meta name="keywords" content="Somalia gemstone testing, gemstone laboratory Somalia, gemstone identification Somalia, mineral testing Somalia, gold testing Somalia, emerald, ruby, sapphire">
 <style>
-:root{--navy:#07141f;--gold:#c99a3b;--cream:#f7f4ec;--white:#fff;--muted:#68737d;--line:#e6e1d7}
+:root{
+  --navy:#07141f;
+  --navy2:#0c2232;
+  --gold:#d3a23b;
+  --gold2:#efc45e;
+  --white:#fff;
+  --muted:#d6e0e6;
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--navy);background:var(--cream);line-height:1.6}
-.container{max-width:1120px;margin:auto;padding:0 22px}
-/* hero banner: show logo centered */
-.hero-banner{width:100%;display:flex;align-items:center;justify-content:center;padding:18px 0;background:linear-gradient(180deg,rgba(7,20,31,0.02),transparent)}
-.hero-banner img{max-width:320px;height:auto;display:block}
-header{background:rgba(7,20,31,.96);color:white;position:sticky;top:0;z-index:20;border-bottom:1px solid rgba(255,255,255,.1)}
-.nav{height:72px;display:flex;align-items:center;justify-content:space-between}
-.brand{font-weight:800;letter-spacing:.4px;display:flex;align-items:center;gap:12px}
-.brand img{height:50px;width:auto}
-.brand-text span{color:var(--gold)}
-nav a{color:white;text-decoration:none;margin-left:22px;font-size:14px}
-.hero{background:radial-gradient(circle at 80% 20%,#294357 0,#07141f 48%,#030a10 100%);color:white;padding:105px 0 90px}
-.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:50px;align-items:center}
-.eyebrow{color:#e3bb68;text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:700}
-h1{font-size:clamp(42px,6vw,72px);line-height:1.02;margin:14px 0 20px;letter-spacing:-2px}
-.hero p{font-size:19px;color:#d8e0e5;max-width:680px}
-.btn{display:inline-block;padding:14px 20px;border-radius:8px;text-decoration:none;font-weight:700;margin:8px 8px 0 0}
-.primary{background:var(--gold);color:#111}
-.secondary{border:1px solid #758795;color:white;background:transparent}
-.hero-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);padding:30px;border-radius:18px;backdrop-filter:blur(5px)}
-.hero-card .stone{font-size:74px;margin-bottom:5px}
-.hero-card h3{margin:0 0 8px}
-.hero-card p{font-size:14px;margin:0;color:#cbd5db}
-section{padding:78px 0}
-.section-head{max-width:720px;margin-bottom:38px}
-.section-head h2{font-size:38px;line-height:1.1;margin:8px 0 12px}
-.section-head p{color:var(--muted)}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--navy);background:#f7f4ec;line-height:1.6}
+.container{max-width:1180px;margin:auto;padding:0 28px}
+
+/* HEADER */
+header{
+  background:#07141f;
+  color:white;
+  position:sticky;
+  top:0;
+  z-index:20;
+  border-bottom:1px solid rgba(255,255,255,.12)
+}
+.nav{
+  min-height:104px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:28px
+}
+.brand{display:flex;align-items:center;gap:20px}
+.brand img{
+  width:92px;
+  height:92px;
+  object-fit:contain;
+  flex:none
+}
+.brand-name{
+  font-size:30px;
+  line-height:1.15;
+  font-weight:800;
+  max-width:360px
+}
+.brand-name span{color:var(--gold2)}
+.brand-divider{height:58px;width:1px;background:rgba(255,255,255,.35)}
+.brand-testing{
+  color:var(--gold2);
+  font-weight:800;
+  font-size:25px;
+  line-height:1.35;
+  letter-spacing:1px
+}
+nav{display:flex;gap:24px}
+nav a{color:white;text-decoration:none;font-size:14px;font-weight:700}
+nav a:hover{color:var(--gold2)}
+.menu{display:none;font-size:36px;line-height:1;color:white}
+
+/* HERO */
+.hero{
+  background:radial-gradient(circle at 78% 12%,#23445b 0,#102b3e 34%,#07141f 72%);
+  color:white;
+  padding:92px 0 0;
+  overflow:hidden
+}
+.hero-copy{max-width:900px;padding-bottom:58px}
+.eyebrow{
+  color:#e7b94f;
+  text-transform:uppercase;
+  letter-spacing:3px;
+  font-size:16px;
+  font-weight:800;
+  margin-bottom:22px
+}
+h1{
+  font-size:clamp(48px,7vw,86px);
+  line-height:.98;
+  margin:0 0 28px;
+  letter-spacing:-3px;
+  max-width:950px
+}
+.hero p{
+  font-size:21px;
+  color:#dbe4e9;
+  max-width:850px;
+  margin:0 0 30px
+}
+.buttons{display:flex;gap:18px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:58px;
+  padding:14px 28px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:800;
+  font-size:17px
+}
+.primary{background:var(--gold2);color:#111}
+.secondary{border:2px solid #8396a4;color:white;background:transparent}
+.hero-photo{
+  width:100%;
+  display:block;
+  max-height:560px;
+  object-fit:cover;
+  object-position:center 45%
+}
+
+/* SECTIONS */
+section{padding:80px 0}
+.section-head{max-width:760px;margin-bottom:38px}
+.section-head h2{font-size:42px;line-height:1.1;margin:8px 0 12px}
+.section-head p{color:#68737d}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{background:white;border:1px solid var(--line);padding:26px;border-radius:14px}
+.card{background:white;border:1px solid #e6e1d7;padding:26px;border-radius:14px}
 .icon{font-size:30px}
 .card h3{margin:10px 0 7px}
-.card p{margin:0;color:var(--muted)}
+.card p{margin:0;color:#68737d}
 .dark{background:var(--navy);color:white}
 .dark .section-head p,.dark .card p{color:#bac7cf}
 .dark .card{background:#102332;border-color:#29404f}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.step{padding:22px;border-top:3px solid var(--gold);background:white;border-radius:0 0 12px 12px}
+.step{padding:22px;border-top:3px solid var(--gold);background:white;color:var(--navy);border-radius:0 0 12px 12px}
 .step b{font-size:28px;color:var(--gold);display:block;margin-bottom:6px}
 .step h3{margin:0 0 6px}
-.step p{margin:0;color:var(--muted)}
+.step p{margin:0;color:#68737d}
 .about{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
 .check{margin:14px 0;padding-left:28px;position:relative}
 .check:before{content:"✓";position:absolute;left:0;color:var(--gold)}
@@ -58,106 +140,165 @@ section{padding:78px 0}
 .cta p{max-width:650px;margin:0 auto 20px}
 footer{background:#030a10;color:#9daab3;padding:35px 0;font-size:13px}
 .footer-grid{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.wa{position:fixed;right:20px;bottom:20px;background:#25D366;color:white;padding:12px 14px;border-radius:28px;text-decoration:none;font-size:16px}
-@media(max-width:800px){nav{display:none}.hero-grid,.about{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}section{padding:58px 0}.hero{padding:75px 0}.b[...]
-@media(max-width:500px){.steps{grid-template-columns:1fr}h1{font-size:45px}.brand img{height:35px}}
+.wa{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  background:#25D366;
+  color:white;
+  padding:13px 18px;
+  border-radius:28px;
+  text-decoration:none;
+  font-size:16px;
+  font-weight:700;
+  z-index:30
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  nav{display:none}
+  .menu{display:block}
+  .brand img{width:72px;height:72px}
+  .brand-name{font-size:22px;max-width:240px}
+  .brand-divider{height:48px}
+  .brand-testing{font-size:18px}
+  .hero{padding-top:65px}
+  h1{font-size:clamp(46px,12vw,68px)}
+  .hero p{font-size:18px}
+  .hero-photo{max-height:430px}
+  .hero-grid,.about{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .container{padding:0 22px}
+  .nav{min-height:78px}
+  .brand{gap:10px}
+  .brand img{width:54px;height:54px}
+  .brand-name{font-size:18px;max-width:155px}
+  .brand-divider{display:none}
+  .brand-testing{font-size:14px;line-height:1.25;max-width:100px}
+  .menu{font-size:30px}
+  .hero{padding-top:54px}
+  .hero-copy{padding-bottom:42px}
+  .eyebrow{font-size:12px;letter-spacing:2.2px}
+  h1{font-size:48px;letter-spacing:-2px}
+  .hero p{font-size:17px}
+  .buttons{display:grid;grid-template-columns:1fr}
+  .btn{width:100%}
+  .hero-photo{max-height:300px}
+  section{padding:58px 0}
+  .steps{grid-template-columns:1fr}
+  .section-head h2{font-size:34px}
+  .wa{right:14px;bottom:14px}
+}
 </style>
 </head>
 <body>
-<div class="hero-banner">
-  <img src="logo.png" alt="Somalia Gemstones and Minerals Co. Logo" class="hero-logo">
-</div>
 
 <header>
-<div class="container nav">
-<div class="brand">
-<img src="logo.png" alt="Somalia Gemstones and Minerals Co. Logo">
-<div class="brand-text">SOMALIA <span>GEMSTONE TESTING</span></div>
-</div>
-<nav aria-label="Main navigation"><a href="#services">Services</a><a href="#process">Process</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
-</div>
+  <div class="container nav">
+    <div class="brand">
+      <img src="logo.png" alt="Somalia Gemstones and Minerals Co. Logo">
+      <div class="brand-name">Somalia Gemstones<br>and Minerals Co.</div>
+      <div class="brand-divider"></div>
+      <div class="brand-testing">SOMALIA<br>GEMSTONE<br>TESTING</div>
+    </div>
+    <nav aria-label="Main navigation">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="menu" aria-label="Menu">☰</div>
+  </div>
 </header>
 
 <main>
 <section class="hero">
-<div class="container hero-grid">
-<div>
-<div class="eyebrow">Independent gemstone &amp; mineral testing in Somalia</div>
-<h1>Know what your stone is before you sell it.</h1>
-<p>Professional gemstone identification, examination, mineral testing, gold testing and laboratory reports for miners, traders, jewelers, collectors and buyers.</p>
-<a class="btn primary" href="https://wa.me/252622853776" target="_blank" rel="noopener">WhatsApp Us</a>
-<a class="btn secondary" href="#services">View Services</a>
-</div>
-<div class="hero-card">
-<img src="gemstone-testing-hero.jpg"
-     alt="gemstone-testing-hero"
-     style="width:100%; max-width:500px; border-radius:12px;">
-<h3>Clear. Practical. Professional.</h3>
-<p>We help you understand what you have, choose the appropriate examination and document the result.</p>
-</div>
-</div>
+  <div class="container">
+    <div class="hero-copy">
+      <div class="eyebrow">Independent gemstone &amp; mineral testing in Somalia</div>
+      <h1>Know what your stone is before you sell it.</h1>
+      <p>Professional gemstone identification, examination, mineral testing, gold testing and laboratory reports for miners, traders, jewelers, collectors and buyers.</p>
+      <div class="buttons">
+        <a class="btn primary" href="https://wa.me/252622853776" target="_blank" rel="noopener">WhatsApp Us</a>
+        <a class="btn secondary" href="#services">View Services →</a>
+      </div>
+    </div>
+  </div>
+  <img class="hero-photo" src="gemstone-testing-hero.jpg" alt="Gemstone testing laboratory">
 </section>
 
 <section id="services">
-<div class="container">
-<div class="section-head"><div class="eyebrow">Our services</div><h2>Testing that helps you make better decisions.</h2><p>From a single stone to a larger collection, start with the examination yo[...]
-<div class="grid">
-<div class="card"><div class="icon">💎</div><h3>Gemstone Identification</h3><p>Identify the likely gemstone species and distinguish common look-alikes.</p></div>
-<div class="card"><div class="icon">🔬</div><h3>Gemstone Examination</h3><p>Examine gemstones for characteristics relevant to identification and authenticity assessment.</p></div>
-<div class="card"><div class="icon">🪨</div><h3>Mineral Testing</h3><p>Testing and identification support for minerals and geological specimens.</p></div>
-<div class="card"><div class="icon">🥇</div><h3>Gold Testing</h3><p>Testing support for gold and gold-bearing material.</p></div>
-<div class="card"><div class="icon">📄</div><h3>Laboratory Reports</h3><p>Clear written documentation of the examination and reported findings.</p></div>
-<div class="card"><div class="icon">🛒</div><h3>Pre-Purchase Testing</h3><p>Get independent information before buying or selling a valuable stone.</p></div>
-</div>
-</div>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Our services</div>
+      <h2>Testing that helps you make better decisions.</h2>
+      <p>From a single stone to a larger collection, start with the examination you need.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><div class="icon">💎</div><h3>Gemstone Identification</h3><p>Identify the likely gemstone species and distinguish common look-alikes.</p></div>
+      <div class="card"><div class="icon">🔬</div><h3>Gemstone Examination</h3><p>Examine gemstones for characteristics relevant to identification and authenticity assessment.</p></div>
+      <div class="card"><div class="icon">🪨</div><h3>Mineral Testing</h3><p>Testing and identification support for minerals and geological specimens.</p></div>
+      <div class="card"><div class="icon">🥇</div><h3>Gold Testing</h3><p>Testing support for gold and gold-bearing material.</p></div>
+      <div class="card"><div class="icon">📄</div><h3>Laboratory Reports</h3><p>Clear written documentation of the examination and reported findings.</p></div>
+      <div class="card"><div class="icon">🛒</div><h3>Pre-Purchase Testing</h3><p>Get independent information before buying or selling a valuable stone.</p></div>
+    </div>
+  </div>
 </section>
 
 <section id="process" class="dark">
-<div class="container">
-<div class="section-head"><div class="eyebrow">How it works</div><h2>Simple from first message to final report.</h2><p>Send us the details first. We will help you determine the appropriate next s[...]
-<div class="steps">
-<div class="step"><b>01</b><h3>Send details</h3><p>Message us on WhatsApp and send clear photos of the specimen.</p></div>
-<div class="step"><b>02</b><h3>Assessment</h3><p>We discuss what you believe the stone is and what you need to know.</p></div>
-<div class="step"><b>03</b><h3>Testing</h3><p>Arrange the appropriate examination and testing for the specimen.</p></div>
-<div class="step"><b>04</b><h3>Result</h3><p>Receive the findings and, where requested, a written laboratory report.</p></div>
-</div>
-</div>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">How it works</div>
+      <h2>Simple from first message to final report.</h2>
+      <p>Send us the details first. We will help you determine the appropriate next step.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><b>01</b><h3>Send details</h3><p>Message us on WhatsApp and send clear photos of the specimen.</p></div>
+      <div class="step"><b>02</b><h3>Assessment</h3><p>We discuss what you believe the stone is and what you need to know.</p></div>
+      <div class="step"><b>03</b><h3>Testing</h3><p>Arrange the appropriate examination and testing for the specimen.</p></div>
+      <div class="step"><b>04</b><h3>Result</h3><p>Receive the findings and, where requested, a written laboratory report.</p></div>
+    </div>
+  </div>
 </section>
 
 <section id="about">
-<div class="container about">
-<div>
-<div class="eyebrow">For Somalia's gemstone community</div>
-<h2>Helping miners and buyers add value through better information.</h2>
-<p>Our focus is practical: help miners, traders, jewelers, exporters and collectors understand their specimens before making important buying, selling or marketing decisions.</p>
-<div class="check">Independent testing and examination</div>
-<div class="check">Clear communication without unnecessary technical language</div>
-<div class="check">Support for miners, traders and collectors</div>
-<div class="check">Professional documentation when required</div>
-</div>
-<div class="card">
-<h3>What should you send us?</h3>
-<p>For an initial WhatsApp assessment, send:</p>
-<p>• Clear photos from several angles<br>• Approximate size/weight if known<br>• Where the specimen came from<br>• What you believe the stone may be<br>• What you want to know about it[[...]
-<a class="btn primary" href="https://wa.me/252622853776?text=Hello%20Somalia%20Gemstone%20Testing%2C%20I%20would%20like%20to%20have%20a%20stone%20tested." target="_blank" rel="noopener">Send a St[...]
-</div>
-</div>
+  <div class="container about">
+    <div>
+      <div class="eyebrow">For Somalia's gemstone community</div>
+      <h2>Helping miners and buyers add value through better information.</h2>
+      <p>Our focus is practical: help miners, traders, jewelers, exporters and collectors understand their specimens before making important buying, selling or marketing decisions.</p>
+      <div class="check">Independent testing and examination</div>
+      <div class="check">Clear communication without unnecessary technical language</div>
+      <div class="check">Support for miners, traders and collectors</div>
+      <div class="check">Professional documentation when required</div>
+    </div>
+    <div class="card">
+      <h3>What should you send us?</h3>
+      <p>For an initial WhatsApp assessment, send:</p>
+      <p>• Clear photos from several angles<br>• Approximate size/weight if known<br>• Where the specimen came from<br>• What you believe the stone may be<br>• What you want to know about it</p>
+      <a class="btn primary" href="https://wa.me/252622853776?text=Hello%20Somalia%20Gemstone%20Testing%2C%20I%20would%20like%20to%20have%20a%20stone%20tested." target="_blank" rel="noopener">Send a Stone for Assessment</a>
+    </div>
+  </div>
 </section>
 
 <section class="cta" id="contact">
-<h2>Have a gemstone you want to understand?</h2>
-<p>Send us a clear photo and tell us what you need to know. We will help you choose the appropriate testing service.</p>
-<a class="btn" style="background:#07141f;color:white" href="https://wa.me/252622853776" target="_blank" rel="noopener">WhatsApp +252 62 285 3776</a>
+  <h2>Have a gemstone you want to understand?</h2>
+  <p>Send us a clear photo and tell us what you need to know. We will help you choose the appropriate testing service.</p>
+  <a class="btn" style="background:#07141f;color:white" href="https://wa.me/252622853776" target="_blank" rel="noopener">WhatsApp +252 62 285 3776</a>
 </section>
 </main>
 
 <footer>
-<div class="container footer-grid">
-<div><strong>Somalia Gemstone Testing Laboratory</strong><br>Gemstone • Mineral • Gold Testing</div>
-<div>WhatsApp: +252 62 285 3776<br>Email: somaliagemstones@gmail.com</div>
-<div>Somalia</div>
-</div>
+  <div class="container footer-grid">
+    <div><strong>Somalia Gemstone Testing Laboratory</strong><br>Gemstone • Mineral • Gold Testing</div>
+    <div>WhatsApp: +252 62 285 3776<br>Email: somaliagemstones@gmail.com</div>
+    <div>Somalia</div>
+  </div>
 </footer>
+
 <a class="wa" href="https://wa.me/252622853776" target="_blank" rel="noopener">💬 WhatsApp</a>
 </body>
 </html>

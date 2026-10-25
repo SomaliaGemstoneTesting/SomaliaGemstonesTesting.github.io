@@ -107,7 +107,7 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--navy);background:#f7f4ec;line-height:1.6}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--navy);background:#f7f4ec;line-height:1.6;-webkit-text-size-adjust:100%}
 .container{max-width:1180px;margin:auto;padding:0 28px}
 
 /* HEADER */
@@ -151,7 +151,8 @@ header{
 nav{display:flex;gap:24px}
 nav a{color:white;text-decoration:none;font-size:14px;font-weight:700}
 nav a:hover{color:var(--gold2)}
-.menu{display:none;font-size:36px;line-height:1;color:white}
+.menu{display:none;font-size:36px;line-height:1;color:white;background:none;border:none;padding:0;cursor:pointer}
+.site-nav.mobile-open{display:flex}
 
 /* HERO */
 .hero{
@@ -313,6 +314,8 @@ footer{background:#030a10;color:#9daab3;padding:35px 0;font-size:13px}
 @media(max-width:900px){
   nav{display:none}
   .menu{display:block}
+  .site-nav.mobile-open{display:flex;position:absolute;left:20px;right:20px;top:86px;flex-direction:column;background:#07141f;padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,.15);box-shadow:0 16px 30px rgba(0,0,0,.2)}
+  .site-nav.mobile-open a{padding:12px 14px;border-radius:8px}
   .brand img{width:72px;height:72px}
   .brand-name{font-size:22px;max-width:240px}
   .brand-divider{height:48px}
@@ -328,19 +331,19 @@ footer{background:#030a10;color:#9daab3;padding:35px 0;font-size:13px}
 }
 @media(max-width:600px){
   .container{padding:0 22px}
-  .nav{min-height:78px}
-  .brand{gap:10px}
+  .nav{min-height:78px;position:relative}
+  .brand{gap:10px;align-items:center}
   .brand img{width:54px;height:54px}
   .brand-name{font-size:18px;max-width:155px}
   .brand-divider{display:none}
   .brand-testing{font-size:14px;line-height:1.25;max-width:100px}
-  .menu{font-size:30px}
+  .menu{font-size:30px;padding:8px 4px}
   .hero{padding-top:54px}
-  .hero-copy{padding-bottom:42px}
+  .hero-copy{padding-bottom:32px}
   .eyebrow{font-size:12px;letter-spacing:2.2px}
   h1{font-size:48px;letter-spacing:-2px}
   .hero p{font-size:17px}
-  .buttons{display:grid;grid-template-columns:1fr}
+  .buttons{display:grid;grid-template-columns:1fr;gap:12px}
   .btn{width:100%}
   .hero-photo{max-height:300px}
   section{padding:58px 0}
@@ -351,7 +354,8 @@ footer{background:#030a10;color:#9daab3;padding:35px 0;font-size:13px}
   .newsletter-form{flex-direction:column}
   .newsletter-form button{width:100%}
   .testimonial{padding:18px}
-  .rating-badge{flex-direction:column;gap:10px}
+  .rating-badge{flex-direction:column;gap:10px;align-items:flex-start;width:max-content}
+  .footer-grid{flex-direction:column;gap:12px}
 }
 </style>
 </head>
@@ -365,7 +369,7 @@ footer{background:#030a10;color:#9daab3;padding:35px 0;font-size:13px}
       <div class="brand-divider"></div>
       <div class="brand-testing">SOMALIA<br>GEMSTONE<br>TESTING</div>
     </div>
-    <nav aria-label="Main navigation">
+    <nav class="site-nav" id="mainNav" aria-label="Main navigation">
       <a href="#services">Services</a>
       <a href="#process">Process</a>
       <a href="#about">About</a>
@@ -373,7 +377,7 @@ footer{background:#030a10;color:#9daab3;padding:35px 0;font-size:13px}
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
     </nav>
-    <div class="menu" aria-label="Menu">☰</div>
+    <button class="menu" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
   </div>
 </header>
 
@@ -575,58 +579,56 @@ footer{background:#030a10;color:#9daab3;padding:35px 0;font-size:13px}
 <a class="wa" href="https://wa.me/252622853776" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">💬 WhatsApp</a>
 
 <script>
-// Google Business Reviews Data
-// Instructions: Replace with actual Google Business API data or manually update this object
 const reviewsData = {
   averageRating: 4.9,
   reviewCount: 28,
   reviews: [
     {
       author: "Hassan M.",
-      role: "Gemstone Trader, Mogadishu",
+      role: "Ganacsade Dhagaxyo, Muqdisho",
       rating: 5,
-      text: "Professional service. They identified my stone quickly and gave me a detailed report. Very helpful for my export business.",
-      date: "2 weeks ago",
+      text: "Adeeg xirfad leh. Waxay si degdeg ah u aqoonsadeen dhagaxayga waxayna i siisay warbixin faahfaahsan. Aad bay i caawisay ganacsiga dhoofinta.",
+      date: "2 toddobaad kahor",
       verified: true
     },
     {
       author: "Amina K.",
-      role: "Mineral Collector, Hargeisa",
+      role: "Xidhiidhaha Macdanta, Hargeysa",
       rating: 5,
-      text: "Clear communication and honest assessment. I knew exactly what I was selling. Highly recommended for anyone in the trade.",
-      date: "1 month ago",
+      text: "Xiriir cad iyo qiimayn daacad ah. Waan ogaadey saxda ah waxa aan iibinayay. Aad bay u lagugta qof kasta oo ganacsi leh.",
+      date: "1 bil kahor",
       verified: true
     },
     {
       author: "Mohamed A.",
-      role: "Jewelry Exporter, Kismayo",
+      role: "Soo dejiyaha Alwaaxa, Kismayo",
       rating: 5,
-      text: "Fast service and reliable reports. They helped me understand my collection better and increased its value significantly.",
-      date: "3 weeks ago",
+      text: "Adeeg degdeg ah iyo warbixin la isku halleyn karo. Waxay i caawisay inaan si fiican u fahmo ururkeyga oo ay qiimihiisu kordhay.",
+      date: "3 toddobaad kahor",
       verified: true
     },
     {
       author: "Fatima H.",
-      role: "Gold Dealer, Baaidoa",
+      role: "Ganacsade Dahab, Baydhabo",
       rating: 5,
-      text: "Excellent technical knowledge. The team explained everything clearly in simple terms. Best testing service in Somalia.",
-      date: "1 week ago",
+      text: "Aqoonta farsamada ee aadka u wanaagsan. Kooxda waxay wax walba si fudud u sharaxday. Waa adeegga tijaabada ugu fiicnaan kara Soomaaliya.",
+      date: "1 toddobaad kahor",
       verified: true
     },
     {
       author: "Omar S.",
-      role: "Gemstone Miner, Kismayo",
+      role: "Macdantihii Dhagaxyada, Kismayo",
       rating: 5,
-      text: "Trustworthy and transparent. Fair pricing and detailed documentation. I send all my stones here.",
-      date: "5 days ago",
+      text: "Aamin iyo daacadnimo. Qiimo cadaalad leh iyo dukumeenti faahfaahsan. Dhagaxyada oo dhan waxaan u diraa halkan.",
+      date: "5 maalmood kahor",
       verified: true
     },
     {
       author: "Layla M.",
-      role: "Jewelry Store Owner, Mogadishu",
+      role: "Milkiile Dukaan Alwaax, Muqdisho",
       rating: 4,
-      text: "Good service overall. Quick turnaround time and professional reports. Would recommend to other businesses.",
-      date: "3 days ago",
+      text: "Adeeg wanaagsan guud ahaan. Wakhtiga soo celinta waa degdeg ah oo warbixinta waa xirfadle. Waan ku talin lahaa ganacsatada kale.",
+      date: "3 maalmood kahor",
       verified: true
     }
   ]
@@ -635,7 +637,26 @@ const reviewsData = {
 // Initialize reviews on page load
 document.addEventListener('DOMContentLoaded', function() {
   loadReviews();
+  initMobileMenu();
 });
+
+function initMobileMenu() {
+  const menuToggle = document.getElementById('menuToggle');
+  const mainNav = document.getElementById('mainNav');
+  if (!menuToggle || !mainNav) return;
+
+  menuToggle.addEventListener('click', function() {
+    const isOpen = mainNav.classList.toggle('mobile-open');
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  mainNav.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      mainNav.classList.remove('mobile-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
 
 // Load and display reviews
 function loadReviews() {
@@ -644,15 +665,12 @@ function loadReviews() {
   
   if (!container) return;
   
-  // Clear loading state
   container.innerHTML = '';
   
-  // Update review count
   if (reviewCount) {
     reviewCount.textContent = reviewsData.reviewCount;
   }
   
-  // Display reviews
   if (reviewsData.reviews && reviewsData.reviews.length > 0) {
     reviewsData.reviews.forEach(review => {
       const reviewEl = createReviewElement(review);
@@ -706,7 +724,6 @@ function handleNewsletter(event) {
 }
 
 // Function to update reviews from Google Business API
-// To use: Call this function with your Google Business API data
 function updateReviewsFromAPI(apiData) {
   if (apiData && apiData.reviews) {
     reviewsData.reviews = apiData.reviews;
@@ -716,7 +733,6 @@ function updateReviewsFromAPI(apiData) {
   }
 }
 
-// Image lazy loading for older browsers
 if ('IntersectionObserver' in window) {
   const imageObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
